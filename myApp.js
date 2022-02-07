@@ -1,4 +1,6 @@
 require('dotenv').config();
+let mongoose = require('mongoose');
+
 
 
 
@@ -53,7 +55,6 @@ const queryChain = (done) => {
 };
 
 /* CONNECT MONGODB & MOONGOSE*/
-let mongoose = require('mongoose');
 
 let uri = 'mongodb+srv:' + process.env.MONGO_URI + '@freecodecamp.kvqc7.mongodb.net/freecodeCamp?retryWrites=true&w=majority'
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
