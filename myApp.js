@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 
+
 let Person;
 
 const createAndSavePerson = (done) => {
@@ -52,8 +53,11 @@ const queryChain = (done) => {
 };
 
 /* CONNECT MONGODB & MOONGOSE*/
-const mongoose = require('mongoose');
+let mongoose = require('mongoose');
+
 let uri = 'mongodb+srv:' + process.env.MONGO_URI + '@freecodecamp.kvqc7.mongodb.net/freecodeCamp?retryWrites=true&w=majority'
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
 /** **Well Done !!**
 /* You completed these challenges, let's go celebrate !
  */
