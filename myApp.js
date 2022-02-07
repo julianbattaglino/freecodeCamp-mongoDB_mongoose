@@ -53,8 +53,7 @@ const queryChain = (done) => {
 
 /* CONNECT MONGODB & MOONGOSE*/
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://freecodecamp:<Pitufa03>@freecodecamp.kvqc7.mongodb.net/freecodeCamp?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true });
-
+let uri = 'mongodb+srv:' + process.env.MONGO_URI + '@freecodecamp.kvqc7.mongodb.net/freecodeCamp?retryWrites=true&w=majority'
 /** **Well Done !!**
 /* You completed these challenges, let's go celebrate !
  */
