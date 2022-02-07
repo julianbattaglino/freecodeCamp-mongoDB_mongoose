@@ -51,7 +51,7 @@ const queryChain = (done) => {
   done(null /*, data*/);
 };
 
-/* CONNECT MONGODB & MOONGOSE*/ */
+/* CONNECT MONGODB & MOONGOSE*/
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
