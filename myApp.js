@@ -74,9 +74,9 @@ const Person = mongoose.model('Person', personSchema);
 let Person = new Person({
   name:  "Julian Battaglino",
   age: 37,
-  favoriteFoods:  ["Milanesa", "Hamburguesa"],
+  favoriteFoods:  ["Milanesa", "Hamburguesa"]
 
-})
+});
 
 
 
