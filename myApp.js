@@ -3,7 +3,6 @@ require('dotenv').config();
 
 
 
-let Person;
 
 const createAndSavePerson = (done) => {
   done(null /*, data*/);
@@ -60,14 +59,15 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 
 
 /* 2 - Create a Model */
-var Schema  = mongoose.Schema;
+const Schema  = mongoose.Schema;
 
-var personSchema = new Schema({
+const personSchema = new Schema({
   name:  { type: String, required: true },
   age: [Number],
   favoriteFoods:  [String],
 })
 
+const Person = mongoose.model('Person', personSchema);
 
 
 
