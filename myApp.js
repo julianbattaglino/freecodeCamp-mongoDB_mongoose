@@ -70,6 +70,17 @@ const personSchema = new Schema({
 const Person = mongoose.model('Person', personSchema);
 
 
+/* 3 - Create and Save a Record of a Model */
+let Person = new Person({
+  name:  "Julian Battaglino",
+  age: 37,
+  favoriteFoods:  ["Milanesa", "Hamburguesa"],
+
+})
+
+
+
+
 
 /** **Well Done !!**
 /* You completed these challenges, let's go celebrate !
