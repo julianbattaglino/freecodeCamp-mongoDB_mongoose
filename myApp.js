@@ -63,27 +63,21 @@ const Schema  = mongoose.Schema;
 
 var personSchema = new Schema({
   name:  { type: String, required: true },
-  age: [Number],
+  age: Number,
   favoriteFoods:  [String],
 })
 
+/** 3) Create and Save a Person */
 var Person = mongoose.model('Person', personSchema);
 
-
-/* 3 - Create and Save a Record of a Model */
 var createAndSavePerson = function(done) {
-var julian = new Person({name:  "Julian Battaglino", age: 37, favoriteFoods:  ["Milanesa", "Hamburguesa"]});
+  var julian = new Person({name: "Julian Battaglino", age: 47, favoriteFoods: ["milanesa", "hamburguesa"]});
 
-julian.save(function(err, data) {
-    if(err){
-      return console.log(err);
-    }else{
-      done(null, data)
-    }
-});
-
+  julian.save(function(err, data) {
+    if (err) return console.error(err);
+    done(null, data)
+  });
 };
-
 
 
 
