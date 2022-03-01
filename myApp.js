@@ -71,12 +71,12 @@ const Person = mongoose.model('Person', personSchema);
 
 
 /* 3 - Create and Save a Record of a Model */
-let Person = new Person({
+let Programador = new Person({
   name:  "Julian Battaglino",
   age: 37,
   favoriteFoods:  ["Milanesa", "Hamburguesa"]
 
-})
+});
 
 
 
