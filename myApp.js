@@ -63,22 +63,21 @@ const Schema  = mongoose.Schema;
 
 const personSchema = new Schema({
   name:  { type: String, required: true },
-  age: Number,
-  favoriteFoods:  [String]
- }
-);
+  age: [Number],
+  favoriteFoods:  [String],
+})
 
-var Person = mongoose.model('Person', personSchema);
-
+const Person = mongoose.model('Person', personSchema);
 
 
 /* 3 - Create and Save a Record of a Model */
-function createAndSavePerson(done) {
-let julian = new Person({
+let Person = new Person({
   name:  "Julian Battaglino",
   age: 37,
   favoriteFoods:  ["Milanesa", "Hamburguesa"]
-});
+
+})
+
 
 
 
