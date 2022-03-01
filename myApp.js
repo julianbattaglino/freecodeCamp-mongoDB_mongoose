@@ -59,29 +59,28 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 
 
 /* 2 - Create a Model */
-const Person  = mongoose.Schema;
+const Schema  = mongoose.Schema;
 
-var personSchema = new Person({
+const personSchema = new Schema({
   name:  { type: String, required: true },
-  age: Number,
+  age: [Number],
   favoriteFoods:  [String],
 })
 
-var Person = mongoose.model('Person', personSchema);
+const Person = mongoose.model('Person', personSchema);
 
 
 /* 3 - Create and Save a Record of a Model */
-function createAndSavePerson(done) {
-var julian = new Person({
-  name:  "Julian Battaglino", 
-  age: 37, 
-  favoriteFoods:  ["Milanesa", "Hamburguesa"]
-});
+const createAndSavePerson = function(done) {
+let julian = new Person({name:  "Julian Battaglino", age: 37, favoriteFoods:  ["Milanesa", "Hamburguesa"]})
 
 julian.save(function(err, data) {
-    if (err) return console.log(err);
-    done(null, data);
-  });
+    if(error){
+      console.log(error)
+    }else{
+      done(null, data)
+    }
+})
 
 };
 
