@@ -59,9 +59,9 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
 
 
 /* 2 - Create a Model */
-const Schema  = mongoose.Schema;
+const Person  = mongoose.Schema;
 
-var personSchema = new Schema({
+var personSchema = new Person({
   name:  { type: String, required: true },
   age: Number,
   favoriteFoods:  [String],
