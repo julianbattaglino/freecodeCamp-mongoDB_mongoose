@@ -1,6 +1,4 @@
 require('dotenv').config();
-const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGO_URI);
 
 
 
@@ -56,9 +54,9 @@ const queryChain = (done) => {
 };
 
 /* CONNECT MONGODB & MOONGOSE*/
-
-let uri = 'mongodb+srv:' + process.env.MONGO_URI + '@freecodecamp.kvqc7.mongodb.net/freecodeCamp?retryWrites=true&w=majority'
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+const mySecret = process.env['MONGO_URI']
+const mongoose = require('mongoose');
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 /** **Well Done !!**
 /* You completed these challenges, let's go celebrate !
