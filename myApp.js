@@ -68,8 +68,6 @@ var personSchema = new Schema({
   favoriteFoods:  [String],
 })
 
-var Person = mongoose.model('Person', personSchema);
-
 
 
 
