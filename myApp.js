@@ -63,7 +63,7 @@ const Schema  = mongoose.Schema;
 
 const personSchema = new Schema({
   name:  { type: String, required: true },
-  age: Number,
+  age: [Number],
   favoriteFoods:  [String],
 })
 
@@ -76,7 +76,7 @@ let Person = new Person({
   age: 37,
   favoriteFoods:  ["Milanesa", "Hamburguesa"]
 
-});
+})
 
 
 
