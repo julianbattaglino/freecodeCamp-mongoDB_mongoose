@@ -64,7 +64,7 @@ var Schema  = mongoose.Schema;
 
 var personSchema = new Schema({
   name:  { type: String, required: true },
-  age: Number,
+  age: [Number],
   favoriteFoods:  [String],
 })
 
