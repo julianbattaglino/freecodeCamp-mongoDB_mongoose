@@ -1,12 +1,34 @@
 require('dotenv').config();
 
+/* 1 - CONNECT MONGODB & MOONGOSE*/
+const mySecret = process.env['MONGO_URI']
+const mongoose = require('mongoose');
+mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 
+/* 2 - Create a Model */
+var Schema  = mongoose.Schema;
 
+var personSchema = new Schema({
+  name:  { type: String, required: true },
+  age: Number,
+  favoriteFoods:  [String],
+})
 
-const createAndSavePerson = (done) => {
-  done(null /*, data*/);
-};
+var Person = mongoose.model('Person', personSchema);
+
+function createAndSavePerson(done) {
+ let julian = new Person({
+  name:  "Julian Battaglino",
+  age: 37,
+  favoriteFoods:  ["Milanesa", "Hamburguesa"]
+ });
+
+julian.save(function(err, data) {
+  if (err) return console.error(err);
+  done(null, data)
+});
+
 
 const createManyPeople = (arrayOfPeople, done) => {
   done(null /*, data*/);
@@ -52,32 +74,7 @@ const queryChain = (done) => {
   done(null /*, data*/);
 };
 
-/* 1 - CONNECT MONGODB & MOONGOSE*/
-const mySecret = process.env['MONGO_URI']
-const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true });
-
-
-/* 2 - Create a Model */
-const Schema  = mongoose.Schema;
-
-const personSchema = new Schema({
-  name:  { type: String, required: true },
-  age: [Number],
-  favoriteFoods:  [String],
-})
-
-const Person = mongoose.model('Person', personSchema);
-
-
-/* 3 - Create and Save a Record of a Model */
-let Person = new Person({
-  name:  "Julian Battaglino",
-  age: 37,
-  favoriteFoods:  ["Milanesa", "Hamburguesa"]
-
-})
-
+};
 
 
 
